@@ -7,20 +7,28 @@ var TARGET = process.env.npm_lifecycle_event;
 var ROOT_PATH = path.resolve(__dirname);
 var APP_PATH = path.resolve(ROOT_PATH, 'app');
 
+process.env.BABEL_ENV = TARGET;
+
 var common = {
     entry: APP_PATH,
+    resolve: {
+        extensions: ['', '.js', '.jsx']
+    },
     module: {
         loaders: [
             {
                 test: /\.css$/,
                 loaders: ['style', 'css'],
                 include: APP_PATH
+            },
+            {
+                test: /\.jsx?$/,
+                loaders: ['babel'],
+                include: APP_PATH
             }
         ]
     },
     plugins: [
-        // important! move HotModuleReplacementPlugin below
-        //new webpack.HotModuleReplacementPlugin(),
         new HtmlwebpackPlugin({
             title: 'Kanban app'
         })
