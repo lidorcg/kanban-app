@@ -5,7 +5,7 @@
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/lidorcg/kanban-app"
   },
   "scripts": {
     "start": "webpack-dev-server"
@@ -24,6 +24,8 @@
     "webpack-merge": "^0.3.0"
   },
   "dependencies": {
+    "alt": "^0.17.9",
+    "alt-container": "^1.0.0",
     "array.prototype.findindex": "^1.0.0",
     "node-uuid": "^1.4.7",
     "react": "^0.14.3",
