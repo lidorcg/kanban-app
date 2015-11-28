@@ -4,7 +4,7 @@ export default function (alt, storage, storeName) {
     const finalStore = makeFinalStore(alt);
 
     try {
-        alt.bootstrap(storage.get(storeName));
+        alt.bootstrap(storage.get('debug'));
     }
     catch (e) {
         console.error('Failed to bootstrap data', e);
